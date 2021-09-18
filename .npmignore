@@ -5,10 +5,11 @@
 src/
 test/
 
-# Ignore package artifacts
+# Ignore map sources
 *.d.ts.map
 *.js.map
 
+# Ignore config files
 jest.config.js
 .gitignore
 tsconfig.json
