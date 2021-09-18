@@ -1,8 +1,15 @@
-const arraysClassNames = (array: [string, any][]): string => {
-    return array.reduce(
-        (previousValue: Array<string>, currentValue: [string, any]): Array<string> => {
-            if (currentValue[1]) {
-                return previousValue.concat(currentValue[0])
+import arraysReduce from "./arraysReduce";
+import { arraysArgumentType } from "./types";
+
+const arraysClassNames = (...args: arraysArgumentType[]): string => {
+    return args.reduce(
+        (previousValue: string[], currentArg: arraysArgumentType): string[] => {
+            if (typeof currentArg === 'string') {
+                return previousValue.concat(currentArg);
+            }
+            
+            if (currentArg[1]) {
+                return previousValue.concat(currentArg[0])    
             }
 
             return previousValue;

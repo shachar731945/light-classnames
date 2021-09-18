@@ -1,7 +1,17 @@
-import arraysClassNames from "./arrays";
+import arraysReduce from "./arraysReduce";
+import { objectArgumentType } from "./types";
 
-const objectClassNames = (object: object): string => {
-    return arraysClassNames(Object.entries(object));
+const objectClassNames = (...args: objectArgumentType[]): string => {
+    return args.reduce(
+        (previousValue: string[], currentArg: objectArgumentType): string[] => {
+            if (typeof currentArg === 'string') {
+                return previousValue.concat(currentArg);
+            }
+            
+            return previousValue.concat(arraysReduce(Object.entries(currentArg)));
+        }
+        , []
+    ).join(' ');
 };
 
 export default objectClassNames;

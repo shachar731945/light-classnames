@@ -1,11 +1,13 @@
+import {arraysArgumentType, objectArgumentType} from '../src/types'
+
 export interface objectTestCase {
     name: string,
-    value: object,
+    value: objectArgumentType[],
     expectedResult: string
 }
 
-export interface arraytTestCase {
+export interface arraysTestCase {
     name: string,
-    value: [string, any][],
+    value: arraysArgumentType[],
     expectedResult: string
 }
