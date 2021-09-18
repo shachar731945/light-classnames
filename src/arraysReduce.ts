@@ -1,5 +1,7 @@
-const arraysReduce = (arrays: [string, any][]): string => {
-    return arrays.reduce((previousValue: string[], currentEntry: [string, any]): string[] => {
+import { arrayArgument } from "./types";
+
+const arraysReduce = (arrays: arrayArgument[]): string => {
+    return arrays.reduce((previousValue: string[], currentEntry: arrayArgument): string[] => {
         if (currentEntry[1]) {
             return previousValue.concat(currentEntry[0]);
         }
