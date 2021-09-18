@@ -3,12 +3,12 @@
 
 # development
 src/
-example/
 test/
 
 # Ignore package artifacts
 *.d.ts.map
 *.js.map
 
+jest.config.js
 .gitignore
 tsconfig.json
