@@ -8,12 +8,8 @@ const lightClassNames = (...args: argumentType[]): string => {
                 return previousValue.concat(currentArg);
             }
 
-            if (currentArg instanceof Array) {
-                if (currentArg[1]) {
-                    return previousValue.concat(currentArg[0]);
-                }
-
-                return previousValue;
+            if (Array.isArray(currentArg)) {
+                return previousValue.concat(lightClassNames(...currentArg))
             }
             
             return previousValue.concat(arraysReduce(Object.entries(currentArg)));

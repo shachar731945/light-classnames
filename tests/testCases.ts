@@ -7,11 +7,6 @@ export default [
         expectedResult: 'a'
     },
     {
-        name: 'literal',
-        value: ['3'],
-        expectedResult: '3'
-    },
-    {
         name: 'many values object wiht literal',
         value: [{a: '6', b: null, c: 6, d: null}, '3'],
         expectedResult: 'a c 3'
@@ -63,12 +58,17 @@ export default [
     },
     {
         name: 'object with array',
-        value: [{a: '6', b: null, c: 6, d: null}, ['6', true]],
-        expectedResult: 'a c 6'
+        value: [{a: '6', b: null, c: 6, d: null}, ['6', 'chubaka']],
+        expectedResult: 'a c 6 chubaka'
     },
     {
         name: 'object, literal and array',
-        value: [{a: '6', b: null, c: 6, d: null}, 'gu', ['e', true], ['f', null]],
-        expectedResult: 'a c gu e'
+        value: [{a: '6', b: null, c: 6, d: null}, 'gu', ['e', 'bread'], ['f']],
+        expectedResult: 'a c gu e bread f'
+    },
+    {
+        name: 'complex inner-array',
+        value: [[{a: true}, [{g: true}, '7']]],
+        expectedResult: 'a g 7'
     }
 ] as lightClassNamesTestCase[];
