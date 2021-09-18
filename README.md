@@ -3,7 +3,7 @@ This is a small implementation of the [classnames](https://www.npmjs.com/package
 
 Becasue of this, all the examples shown in the `className` example will work here too.
 ```js
-lassNames('foo', 'bar'); // => 'foo bar'
+classNames('foo', 'bar'); // => 'foo bar'
 classNames('foo', { bar: true }); // => 'foo bar'
 classNames({ 'foo-bar': true }); // => 'foo-bar'
 classNames({ 'foo-bar': false }); // => ''

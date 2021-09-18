@@ -1,4 +1,4 @@
-import arraysReduce from "./arraysReduce";
+import reduceObjectParam from "./reduceObjectParam";
 import { argumentType } from "./types";
 
 const lightClassNames = (...args: argumentType[]): string => {
@@ -12,7 +12,7 @@ const lightClassNames = (...args: argumentType[]): string => {
                 return previousValue.concat(lightClassNames(...currentArg))
             }
             
-            return previousValue.concat(arraysReduce(Object.entries(currentArg)));
+            return previousValue.concat(reduceObjectParam(currentArg));
         }
         , []
     ).join(' ');
