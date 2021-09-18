@@ -1,0 +1,14 @@
+.idea/
+.vscode/
+
+# development
+src/
+example/
+test/
+
+# Ignore package artifacts
+*.d.ts.map
+*.js.map
+
+.gitignore
+tsconfig.json
