@@ -1,6 +1,6 @@
 {
   "name": "light-classnames",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "A light implementation of the classnames package with typescript support",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
