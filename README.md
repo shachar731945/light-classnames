@@ -1,7 +1,7 @@
 # light-classnames
 This is a small implementation of the [classnames](https://www.npmjs.com/package/classnames) package with a native typescript support.
 
-Becasue of this, all the examples shown in the className example will work here too.
+Becasue of this, all the examples shown in the `className` example will work here too.
 ```js
 lassNames('foo', 'bar'); // => 'foo bar'
 classNames('foo', { bar: true }); // => 'foo bar'
