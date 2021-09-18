@@ -1,3 +1,3 @@
-export type objectArgumentType = string | object;
+export type arrayArgument = [string, any];
 
-export type arraysArgumentType = string | [string, any];
+export type argumentType = string | arrayArgument | object;

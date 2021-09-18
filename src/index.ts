@@ -1,4 +1,3 @@
-import arraysClassNames from "./arrays"
-import objectClassNames from './object';
+import lightClassNames from "./light-classnames";
 
-export {arraysClassNames, objectClassNames};
+export default lightClassNames;

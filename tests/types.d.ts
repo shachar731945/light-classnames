@@ -1,13 +1,7 @@
-import {arraysArgumentType, objectArgumentType} from '../src/types'
+import {argumentType} from '../src/types';
 
-export interface objectTestCase {
+export interface lightClassNamesTestCase {
     name: string,
-    value: objectArgumentType[],
-    expectedResult: string
-}
-
-export interface arraysTestCase {
-    name: string,
-    value: arraysArgumentType[],
+    value: argumentType[],
     expectedResult: string
 }
