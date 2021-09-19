@@ -1,7 +1,10 @@
 const reduceObjectArg = (object: object): string => {
-    return Object.entries(object).reduce((currentArray: string[], currentArg: [string, any]): string[] => {
-        if (currentArg[0]) {
-            return currentArray.concat(currentArg[1]);
+    if (object.toString) {
+        return object.toString();
+    }
+    return Object.entries(object).reduce((currentArray: string[], currentArg: [string, unknown]): string[] => {
+        if (currentArg[1]) {
+            return currentArray.concat(currentArg[0]);
         }
 
         return currentArray;
