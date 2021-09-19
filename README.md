@@ -1,7 +1,10 @@
 # light-classnames
-This is a small implementation of the [classnames](https://www.npmjs.com/package/classnames) package with a native typescript support.
+This package is a very-light (`typescript` written) subtitute to the [classnames](https://www.npmjs.com/package/classnames) package with only the most important and commonly used features implemented:
 
-Becasue of this, all the examples shown in the `className` example will work here too.
+- literal `string` that will always be included
+- objects where the key defiens the `string` and the value represents wheather to include the `string` or not.
+
+Becasue of this, all the examples shown in the original `className` README.md file will work here too.
 ```js
 classNames('foo', 'bar'); // => 'foo bar'
 classNames('foo', { bar: true }); // => 'foo bar'
@@ -12,7 +15,9 @@ classNames({ foo: true, bar: true }); // => 'foo bar'
 
 // lots of arguments of various types
 classNames('foo', { bar: true, duck: false }, 'baz', { quux: true }); // => 'foo bar baz quux'
-
-var arr = ['b', { c: true, d: false }];
-classNames('a', arr); // => 'a b c'
 ```
+
+## Breaking from the original package
+In order to keep the package light and satisfy the vast majority of the usage of the package, This package (in its base form, without plugins) will only parse `literal strings` and `object`.
+
+This means that `number`, `array`, `null`, `undefined` and any other (non-string and non-object) value will not be parsed by this.

@@ -1,6 +1,61 @@
 import {lightClassNamesTestCase} from "./types";
 
 export default [
+    // classnames own testing cases that fit the package' API
+    {
+        name: 'keeps object keys with truthy values',
+        value: [{
+			a: true,
+			b: false,
+			c: 0,
+			d: null,
+			e: undefined,
+			f: 1
+		}],
+        expectedResult: 'a f'
+    },
+    {
+        name: 'returns an empty string for an empty configuration',
+        value: [{}],
+        expectedResult: ''
+    },
+    // classnames own readme examples
+    {
+        name: 'foo bar literals',
+        value: ['foo', 'bar'],
+        expectedResult: 'foo bar'
+    },
+    {
+        name: 'foo literal bar object true',
+        value: ['foo', {bar: true}],
+        expectedResult: 'foo bar'
+    },
+    {
+        name: 'foo-bar object true',
+        value: [{'foo-bar': true}],
+        expectedResult: 'foo-bar'
+    },
+    {
+        name: 'foo-bar object false',
+        value: [{'foo-bar': false}],
+        expectedResult: ''
+    },
+    {
+        name: 'foo object bar object',
+        value: [{foo: true}, {bar: true}],
+        expectedResult: 'foo bar'
+    },
+    {
+        name: 'foo bar object',
+        value: [{foo: true, bar: true}],
+        expectedResult: 'foo bar'
+    },
+    {
+        name: 'lots of arguments',
+        value: ['foo', {bar: true, duck: false}, 'baz', {quux: true}],
+        expectedResult: 'foo bar baz quux'
+    },
+    // my own test cases
     {
         name: 'one item object',
         value: [{a: true}],
