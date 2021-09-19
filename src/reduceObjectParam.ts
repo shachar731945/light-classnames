@@ -1,11 +1,11 @@
-const reduceObjectArg = (object: object): string => {
-    return Object.entries(object).reduce((currentArray: string[], currentArg: [string, any]): string[] => {
-        if (currentArg[0]) {
-            return currentArray.concat(currentArg[1]);
+const reduceObjectArg = (object: object): string[] => {
+    return Object.getOwnPropertyNames(object).reduce((currentArray: string[], currentKey: string): string[] => {
+        if (object[currentKey as keyof object]) {
+            return currentArray.concat(currentKey);
         }
 
         return currentArray;
-    }, []).join(' ');
+    }, []);
 };
 
 export default reduceObjectArg;

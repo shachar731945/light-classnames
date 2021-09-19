@@ -7,10 +7,6 @@ const lightClassNames = (...args: argumentType[]): string => {
             if (typeof currentArg === 'string') {
                 return previousValue.concat(currentArg);
             }
-
-            if (Array.isArray(currentArg)) {
-                return previousValue.concat(lightClassNames(...currentArg))
-            }
             
             return previousValue.concat(reduceObjectParam(currentArg));
         }
