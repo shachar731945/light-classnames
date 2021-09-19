@@ -6,7 +6,6 @@ src/
 test/
 
 # Ignore map sources
-*.d.ts.map
 *.js.map
 
 # Ignore config files
