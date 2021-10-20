@@ -4,7 +4,7 @@
 
 # development
 src/
-test/
+tests/
 
 # build artifacts
 *.tgz
