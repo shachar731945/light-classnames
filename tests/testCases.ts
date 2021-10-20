@@ -1,23 +1,30 @@
-import {lightClassNamesTestCase} from "./types";
 
 export default [
     // classnames own testing cases that fit the package' API
     {
         name: 'keeps object keys with truthy values',
-        value: [{
-			a: true,
-			b: false,
-			c: 0,
-			d: null,
-			e: undefined,
-			f: 1
-		}],
+        value: [{a: true, b: false, c: 0, d: null, e: undefined, f: 1 }],
         expectedResult: 'a f'
+    },
+    {
+        name: 'supports heterogenous arguments',
+        value: [{ a: true }, 'b'],
+        expectedResult: 'a b'
+    },
+    {
+        name: 'should be trimmed',
+        value: ['', 'b', {}, ''],
+        expectedResult: 'b'
     },
     {
         name: 'returns an empty string for an empty configuration',
         value: [{}],
         expectedResult: ''
+    },
+    {
+        name: 'supports an array of class names',
+        value: ['a', 'b'],
+        expectedResult: 'a b'
     },
     // classnames own readme examples
     {
@@ -62,7 +69,7 @@ export default [
         expectedResult: 'a'
     },
     {
-        name: 'many values object wiht literal',
+        name: 'many values object with literal',
         value: [{a: '6', b: null, c: 6, d: null}, '3'],
         expectedResult: 'a c 3'
     },
@@ -92,7 +99,7 @@ export default [
         expectedResult: '3'
     },
     {
-        name: 'many values object wiht literal',
+        name: 'many values object with literal',
         value: [{a: '6', b: null, c: 6, d: null}, '3'],
         expectedResult: 'a c 3'
     },
@@ -110,5 +117,15 @@ export default [
         name: 'two objects with literal',
         value: [{a: '6', b: null, c: 6, d: null}, 'gu', {e: true, f: false}],
         expectedResult: 'a c gu e'
+    },
+    {
+        name: 'remove `undefined` and `null`',
+        value: [undefined, null],
+        expectedResult: ''
+    },
+    {
+        name: 'many values with `undefined` and `null`',
+        value: ['a', undefined, 'b', null, 'c', 'd', undefined, undefined, 'e'],
+        expectedResult: 'a b c d e'
     }
-] as lightClassNamesTestCase[];
+];
