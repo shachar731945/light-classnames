@@ -1,3 +1,4 @@
+# IDE
 .idea/
 .vscode/
 
@@ -5,10 +6,11 @@
 src/
 test/
 
-# Ignore map sources
-*.js.map
+# build artifacts
+*.tgz
 
-# Ignore config files
-jest.config.js
+# Config files
 .gitignore
+jest.config.js
+rollup.config.js
 tsconfig.json
