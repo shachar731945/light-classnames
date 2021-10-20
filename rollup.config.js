@@ -2,7 +2,9 @@ import typescript from '@rollup/plugin-typescript';
 
 import pkg from './package.json';
 
-const externals = [].concat(Object.keys(pkg.dependencies)).concat(Object.keys(pkg.peerDependencies));
+const externals = []
+    .concat(Object.keys(pkg.dependencies || {}))
+    .concat(Object.keys(pkg.peerDependencies || {}));
 
 const generateConfig = format => ({
     external: path => externals.some(external => path.startsWith(external)),
