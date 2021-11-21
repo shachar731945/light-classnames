@@ -1,8 +1,13 @@
+# IDE
 .idea/
 .vscode/
 
+# compiled
 dist/
+coverage/
 
+# development
 node_modules/
 
-coverage/
+# build artifacts
+*.tgz
