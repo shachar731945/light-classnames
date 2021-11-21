@@ -15,7 +15,9 @@
     "clean": "rimraf dist/",
     "prepack": "npm build",
     "test": "jest",
-    "transpile": "rollup -c rollup.config.js"
+    "transpile": "rollup -c rollup.config.js",
+    "transpile:sourcemap": "rollup -c rollup.config.js --sourcemap",
+    "watch": "rollup --c rollup.config.js --watch --sourcemap"
   },
   "keywords": [
     "classnames",

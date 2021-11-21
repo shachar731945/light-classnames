@@ -12,8 +12,7 @@ const generateConfig = format => ({
     output: {
         exports: 'auto',
         file: `dist/bundle.${format}.js`,
-        format,
-        sourcemap: true
+        format
     },
     plugins: [
         typescript({ tsconfig: './tsconfig.json' })
