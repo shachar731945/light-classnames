@@ -1,6 +1,6 @@
 import {argumentType} from '../src/types';
 
-export interface lightClassNamesTestCase {
+export interface testCase {
     name: string,
     value: argumentType[],
     expectedResult: string

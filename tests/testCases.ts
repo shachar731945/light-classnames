@@ -1,4 +1,4 @@
-import {lightClassNamesTestCase} from "./types";
+import {testCase} from "./types";
 
 export default [
     // classnames own testing cases that fit the package' API
@@ -111,4 +111,4 @@ export default [
         value: [{a: '6', b: null, c: 6, d: null}, 'gu', {e: true, f: false}],
         expectedResult: 'a c gu e'
     }
-] as lightClassNamesTestCase[];
+] as testCase[];
