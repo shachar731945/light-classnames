@@ -15,8 +15,8 @@ const generateConfig = format => ({
         format
     },
     plugins: [
-        typescript({ tsconfig: './tsconfig.json' })
+        typescript({tsconfig: './tsconfig.json'})
     ]
 });
 
-export default [ 'esm', 'cjs' ].map(generateConfig);
+export default ['esm', 'cjs'].map(generateConfig);
