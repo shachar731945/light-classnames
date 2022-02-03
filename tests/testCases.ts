@@ -4,6 +4,16 @@ type testCaseType = {name: string, value: ArgumentType[], expectedResult: string
 
 export const benchmarkCases: testCaseType[] = [
     {
+        name: 'benchmark: measurethat',
+        value: [
+            'style',
+            {'style-2': true, 'style-3': false, 'style-4': true},
+            'style-5',
+            'style-6'
+        ],
+        expectedResult: 'style style-2 style-4 style-5 style-6'
+    },
+    {
 		name: 'benchmark: strings',
 		value: ['one', 'two', 'three'],
 		expectedResult: 'one two three'

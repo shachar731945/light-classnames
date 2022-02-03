@@ -15,10 +15,12 @@
     "clean": "rimraf dist/",
     "prepack": "npm build",
     "test": "jest",
+    "test:build": "npm run build && jest",
     "transpile": "rollup -c rollup.config.js",
     "transpile:sourcemap": "rollup -c rollup.config.js --sourcemap",
     "watch": "rollup --c rollup.config.js --watch --sourcemap",
-    "benchmark": "ts-node ./benchmark/run.ts"
+    "benchmark": "ts-node ./benchmark/run.ts",
+    "benchmark:build": "npm run build && ts-node ./benchmark/run.ts"
   },
   "keywords": [
     "classnames",
