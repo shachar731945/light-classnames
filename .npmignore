@@ -5,6 +5,7 @@
 # development
 src/
 tests/
+benchmark/
 
 # build artifacts
 *.tgz
