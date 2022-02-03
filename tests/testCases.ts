@@ -1,3 +1,29 @@
+import {ArgumentType} from "../src/light-classnames";
+
+type testCaseType = {name: string, value: ArgumentType[], expectedResult: string};
+
+export const benchmarkCases: testCaseType[] = [
+    {
+		name: 'benchmark: strings',
+		value: ['one', 'two', 'three'],
+		expectedResult: 'one two three'
+	},
+	{
+		name: 'benchmark: object',
+		value: [{one: true, two: true, three: false}],
+		expectedResult: 'one two'
+	},
+	{
+		name: 'benchmark: strings, object',
+		value: ['one', 'two', {four: true, three: false}],
+		expectedResult: 'one two four'
+	},
+	{
+		name: 'benchmark: mix',
+		value: ['one', {two: true, three: false}, {four: 'four', five: true}, 6, {}],
+		expectedResult: 'one two four five 6'
+	}
+];
 
 export default [
     // classnames own testing cases that fit this package' API
@@ -68,6 +94,8 @@ export default [
         value: [null, 'bar', undefined, 0, 1, { baz: null }, ''],
         expectedResult: 'bar 1'
     },
+    // classnames official benchmark fixtures that are compatible with this package' API
+    ...benchmarkCases,
     // my own test cases
     {
         name: 'one item object',
@@ -129,4 +157,4 @@ export default [
         value: [6, undefined, {}, null, {9: true, 'asdf': 0}],
         expectedResult: '6 9'
     }
-];
+] as testCaseType[];

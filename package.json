@@ -17,7 +17,8 @@
     "test": "jest",
     "transpile": "rollup -c rollup.config.js",
     "transpile:sourcemap": "rollup -c rollup.config.js --sourcemap",
-    "watch": "rollup --c rollup.config.js --watch --sourcemap"
+    "watch": "rollup --c rollup.config.js --watch --sourcemap",
+    "benchmark": "ts-node ./benchmark/run.ts"
   },
   "keywords": [
     "classnames",
@@ -25,12 +26,14 @@
   ],
   "devDependencies": {
     "@rollup/plugin-typescript": "^8.3.0",
+    "@types/benchmark": "^2.1.1",
     "@types/jest": "^27.0.3",
     "benchmark": "^2.1.4",
     "jest": "^27.3.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.60.1",
     "ts-jest": "^27.0.7",
+    "ts-node": "^10.4.0",
     "tslib": "^2.3.1",
     "typescript": "^4.5.2"
   }
