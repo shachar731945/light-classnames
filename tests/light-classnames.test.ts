@@ -1,9 +1,10 @@
 import lightClassNamesTestCases from "./testCases";
 import lightClassNames from '../src/index';
 
-lightClassNamesTestCases.forEach((testCase) => {
-    const {name, value, expectedResult} = testCase;
-    test(name, () => {
-        expect(lightClassNames(...value)).toEqual(expectedResult);
-    })
+describe('Check the function parses correctly', () => {
+    lightClassNamesTestCases.forEach(testCase => {
+        test(testCase.name, () => {
+            expect(lightClassNames(...testCase.value)).toEqual(testCase.expectedResult);
+        });
+    });
 });
