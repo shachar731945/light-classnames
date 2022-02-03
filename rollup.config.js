@@ -11,7 +11,7 @@ const generateConfig = format => ({
     input: 'src/index.ts',
     output: {
         exports: 'auto',
-        file: `dist/bundle.${format}.js`,
+        file: format === 'umd' ? 'dist/light-classnames.min.js' : `dist/bundle.${format}.min.js`,
         name: format === 'umd' ? 'light-classnames' : undefined,
         format,
         plugins: [terser()]
