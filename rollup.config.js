@@ -12,6 +12,7 @@ const generateConfig = format => ({
     output: {
         exports: 'auto',
         file: `dist/bundle.${format}.js`,
+        name: format === 'umd' ? 'light-classnames' : undefined,
         format,
         plugins: [terser()]
     },
@@ -20,4 +21,4 @@ const generateConfig = format => ({
     ]
 });
 
-export default ['esm', 'cjs'].map(generateConfig);
+export default ['esm', 'cjs', 'umd'].map(generateConfig);
