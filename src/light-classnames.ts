@@ -3,15 +3,18 @@ export type ArgumentType = TruthyArgumentType | null | undefined;
 
 type lcnType = (...args: ArgumentType[]) => string;
 
+// using `arguments` instead normal spread operator (...) due to performance reasons.
 const lightClassNames: lcnType = function(): string {
-    let finalString = '', i = 0, l = arguments.length, key;
+    let finalString = '', index = 0, argumentsLength = arguments.length, key;
 
-    while (i < l) {
-        const arg: ArgumentType = arguments[i];
+    // using while instead of forloop for better performance.
+    while (index < argumentsLength) {
+        const arg: ArgumentType = arguments[index];
         if (arg) {
             if (typeof arg === 'object') {
+                // iterating over object with for-in again in order to improve performance.
                 for (key in arg) {
-                    if (arg[key as keyof object]) {
+                    if (arg[key as keyof typeof arg]) {
                         finalString && (finalString += ' ');
                         finalString += key;
                     }
@@ -21,7 +24,7 @@ const lightClassNames: lcnType = function(): string {
                 finalString += arg;
             }
         }
-        i++;
+        index++;
     }
 
     return finalString;
