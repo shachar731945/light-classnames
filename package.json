@@ -1,7 +1,7 @@
 {
   "name": "light-classnames",
-  "version": "0.0.2",
-  "description": "A light implementation of the classnames package with typescript support",
+  "version": "0.0.3",
+  "description": "A light implementation of the classnames/clsx packages with typescript support",
   "author": "shahar avni",
   "contributors": [
     "yehuda goldberg"
