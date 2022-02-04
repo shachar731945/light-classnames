@@ -1,45 +1,46 @@
-import {ArgumentType} from "../src/light-classnames";
+import { ArgumentType } from "../src/light-classnames";
 
-type testCaseType = {name: string, value: ArgumentType[], expectedResult: string};
+type testCaseType = { name: string, value: ArgumentType[], expectedResult: string };
 
 export const benchmarkCases: testCaseType[] = [
     {
         name: 'benchmark: measurethat',
         value: [
             'style',
-            {'style-2': true, 'style-3': false, 'style-4': true},
-            'style-5',
-            'style-6'
+            {'style-2': true, 'style-3': false, 'style-4': 9, 'style-5': null },
+            6,
+            'another-string',
+            {a: undefined, b: 'asdf'}
         ],
-        expectedResult: 'style style-2 style-4 style-5 style-6'
+        expectedResult: 'style style-2 style-4 6 another-string b'
     },
     {
-		name: 'benchmark: strings',
-		value: ['one', 'two', 'three'],
-		expectedResult: 'one two three'
-	},
-	{
-		name: 'benchmark: object',
-		value: [{one: true, two: true, three: false}],
-		expectedResult: 'one two'
-	},
-	{
-		name: 'benchmark: strings, object',
-		value: ['one', 'two', {four: true, three: false}],
-		expectedResult: 'one two four'
-	},
-	{
-		name: 'benchmark: mix',
-		value: ['one', {two: true, three: false}, {four: 'four', five: true}, 6, {}],
-		expectedResult: 'one two four five 6'
-	}
+        name: 'benchmark: strings',
+        value: ['one', 'two', 'three'],
+        expectedResult: 'one two three'
+    },
+    {
+        name: 'benchmark: object',
+        value: [{ one: true, two: true, three: false }],
+        expectedResult: 'one two'
+    },
+    {
+        name: 'benchmark: strings, object',
+        value: ['one', 'two', { four: true, three: false }],
+        expectedResult: 'one two four'
+    },
+    {
+        name: 'benchmark: mix',
+        value: ['one', { two: true, three: false }, { four: 'four', five: true }, 6, {}],
+        expectedResult: 'one two four five 6'
+    }
 ];
 
 export default [
     // classnames own testing cases that fit this package' API
     {
         name: 'keeps object keys with truthy values',
-        value: [{a: true, b: false, c: 0, d: null, e: undefined, f: 1 }],
+        value: [{ a: true, b: false, c: 0, d: null, e: undefined, f: 1 }],
         expectedResult: 'a f'
     },
     {
@@ -71,32 +72,32 @@ export default [
     },
     {
         name: 'foo literal bar object true',
-        value: ['foo', {bar: true}],
+        value: ['foo', { bar: true }],
         expectedResult: 'foo bar'
     },
     {
         name: 'foo-bar object true',
-        value: [{'foo-bar': true}],
+        value: [{ 'foo-bar': true }],
         expectedResult: 'foo-bar'
     },
     {
         name: 'foo-bar object false',
-        value: [{'foo-bar': false}],
+        value: [{ 'foo-bar': false }],
         expectedResult: ''
     },
     {
         name: 'foo object bar object',
-        value: [{foo: true}, {bar: true}],
+        value: [{ foo: true }, { bar: true }],
         expectedResult: 'foo bar'
     },
     {
         name: 'foo bar object',
-        value: [{foo: true, bar: true}],
+        value: [{ foo: true, bar: true }],
         expectedResult: 'foo bar'
     },
     {
         name: 'lots of arguments',
-        value: ['foo', {bar: true, duck: false}, 'baz', {quux: true}],
+        value: ['foo', { bar: true, duck: false }, 'baz', { quux: true }],
         expectedResult: 'foo bar baz quux'
     },
     {
@@ -109,27 +110,27 @@ export default [
     // my own test cases
     {
         name: 'one item object',
-        value: [{a: true, b: false}],
+        value: [{ a: true, b: false }],
         expectedResult: 'a'
     },
     {
         name: 'many values object with literal',
-        value: [{a: '6', b: null, c: 6, d: null}, '3'],
+        value: [{ a: '6', b: null, c: 6, d: null }, '3'],
         expectedResult: 'a c 3'
     },
     {
         name: 'many values object with two literals',
-        value: ['6', {a: '9', b: null, c: 6, d: null}, '3'],
+        value: ['6', { a: '9', b: null, c: 6, d: null }, '3'],
         expectedResult: '6 a c 3'
     },
     {
         name: 'two objects',
-        value: [{a: '6', b: null, c: 6, d: null}, {e: true, f: false}],
+        value: [{ a: '6', b: null, c: 6, d: null }, { e: true, f: false }],
         expectedResult: 'a c e'
     },
     {
         name: 'two objects with literal',
-        value: [{a: '6', b: null, c: 6, d: null}, 'gu', {e: true, f: false}],
+        value: [{ a: '6', b: null, c: 6, d: null }, 'gu', { e: true, f: false }],
         expectedResult: 'a c gu e'
     },
     {
@@ -164,7 +165,7 @@ export default [
     },
     {
         name: 'mix of every possible type',
-        value: [6, undefined, {}, null, {9: true, 'asdf': 0}],
+        value: [6, undefined, {}, null, { 9: true, 'asdf': 0 }],
         expectedResult: '6 9'
     }
 ] as testCaseType[];

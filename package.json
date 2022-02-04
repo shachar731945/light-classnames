@@ -7,8 +7,8 @@
     "yehuda goldberg"
   ],
   "license": "MIT",
-  "main": "dist/bundle.cjs.js",
-  "module": "dist/bundle.esm.js",
+  "main": "dist/bundle.cjs.min.js",
+  "module": "dist/bundle.esm.min.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "npm run clean && npm run transpile",

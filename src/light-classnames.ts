@@ -1,26 +1,30 @@
 export type TruthyArgumentType = string | object | number;
 export type ArgumentType = TruthyArgumentType | null | undefined;
 
-const lightClassNames = (...args: ArgumentType[]): string => {
-    let finalString = '', i = 0, l = args.length;
+type lcnType = (...args: ArgumentType[]) => string;
+
+const lightClassNames: lcnType = function(): string {
+    let finalString = '', i = 0, l = arguments.length, key;
 
     while (i < l) {
-        const arg = args[i];
+        const arg: ArgumentType = arguments[i];
         if (arg) {
             if (typeof arg === 'object') {
-                for (const key in arg) {
+                for (key in arg) {
                     if (arg[key as keyof object]) {
-                        finalString += ' ' + key;
+                        finalString && (finalString += ' ');
+                        finalString += key;
                     }
                 }
             } else {
-                finalString += ' ' + arg;
+                finalString && (finalString += ' ');
+                finalString += arg;
             }
         }
         i++;
     }
 
-    return finalString.substring(1);
+    return finalString;
 };
 
 export default lightClassNames;
