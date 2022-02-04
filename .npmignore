@@ -7,6 +7,9 @@ src/
 tests/
 benchmark/
 
+# map files
+*.map
+
 # build artifacts
 *.tgz
 
