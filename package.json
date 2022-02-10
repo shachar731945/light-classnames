@@ -6,7 +6,16 @@
   "contributors": [
     "yehuda goldberg"
   ],
+  "keywords": [
+    "classnames",
+    "class"
+  ],
+  "homepage": "https://github.com/shachar731945/light-classnames#readme",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shachar731945/light-classnames.git"
+  },
   "main": "dist/bundle.cjs.min.js",
   "module": "dist/bundle.esm.min.js",
   "types": "dist/index.d.ts",
@@ -22,10 +31,6 @@
     "benchmark": "ts-node ./benchmark/run.ts",
     "benchmark:build": "npm run build && ts-node ./benchmark/run.ts"
   },
-  "keywords": [
-    "classnames",
-    "class"
-  ],
   "devDependencies": {
     "@rollup/plugin-typescript": "^8.3.0",
     "@types/benchmark": "^2.1.1",
