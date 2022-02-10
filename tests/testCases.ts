@@ -1,8 +1,12 @@
-import { ArgumentType } from "../src/light-classnames";
+import {ArgumentType} from "../src";
 
-type testCaseType = { name: string, value: ArgumentType[], expectedResult: string };
+export type TestCase = {
+    name: string,
+    value: ArgumentType[],
+    expectedResult: string
+};
 
-export const benchmarkCases: testCaseType[] = [
+export const benchmarkCases: TestCase[] = [
     {
         name: 'benchmark: measurethat',
         value: [
@@ -36,7 +40,7 @@ export const benchmarkCases: testCaseType[] = [
     }
 ];
 
-export default [
+export const testCases: TestCase[] = [
     // classnames own testing cases that fit this package' API
     {
         name: 'keeps object keys with truthy values',
@@ -168,4 +172,4 @@ export default [
         value: [6, undefined, {}, null, { 9: true, 'asdf': 0 }],
         expectedResult: '6 9'
     }
-] as testCaseType[];
+];

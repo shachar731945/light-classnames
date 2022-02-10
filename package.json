@@ -22,12 +22,11 @@
   "scripts": {
     "build": "npm run clean && npm run transpile",
     "clean": "rimraf dist/",
-    "prepack": "npm build",
+    "prepack": "npm run build",
     "test": "jest",
-    "test:build": "npm run build && jest",
-    "transpile": "rollup -c rollup.config.js",
-    "transpile:sourcemap": "rollup -c rollup.config.js --sourcemap",
-    "watch": "rollup --c rollup.config.js --watch --sourcemap",
+    "transpile": "rollup -c",
+    "transpile:sourcemap": "rollup -c --sourcemap",
+    "watch": "rollup -c --watch --sourcemap",
     "benchmark": "ts-node ./benchmark/run.ts",
     "benchmark:build": "npm run build && ts-node ./benchmark/run.ts"
   },

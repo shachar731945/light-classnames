@@ -8,18 +8,18 @@ const lightClassNames: (...args: ArgumentType[]) => string = function () {
 
     // using while instead of for-loop for better performance.
     while (index < argumentsLength) {
-        const arg: ArgumentType = arguments[ index ];
+        const arg: ArgumentType = arguments[index];
         if (arg) {
             if (typeof arg === 'object') {
                 // iterating over object with for-in. In order to improve performance.
                 for (key in arg) {
-                    if (arg[ key as keyof typeof arg ]) {
-                        classNames && (classNames += ' ');
+                    if (arg[key as keyof typeof arg]) {
+                        if (classNames) classNames += ' ';
                         classNames += key;
                     }
                 }
             } else {
-                classNames && (classNames += ' ');
+                if (classNames) classNames += ' ';
                 classNames += arg;
             }
         }

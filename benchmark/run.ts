@@ -1,6 +1,6 @@
 import Benchmark from "benchmark";
 
-import { benchmarkCases } from "../tests/testCases";
+import {benchmarkCases} from "../tests/testCases";
 import lightClassNames from "../";
 
 const suite = new Benchmark.Suite('light-classnames benchmark');
