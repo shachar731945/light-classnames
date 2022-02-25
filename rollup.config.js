@@ -1,5 +1,6 @@
 import typescript from '@rollup/plugin-typescript';
-import { terser } from 'rollup-plugin-terser';
+import {terser} from 'rollup-plugin-terser';
+
 import pkg from './package.json';
 
 const externals = []
@@ -13,11 +14,11 @@ const generateConfig = format => ({
         exports: 'auto',
         file: `dist/bundle.${format}.min.js`,
         name: format === 'umd' ? 'lcn' : undefined,
-        format,
-        plugins: [terser()]
+        format
     },
     plugins: [
-        typescript({tsconfig: './tsconfig.json'})
+        typescript({tsconfig: './tsconfig.json'}),
+        terser()
     ]
 });
 

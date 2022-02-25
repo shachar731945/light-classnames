@@ -4,7 +4,7 @@
 
 # compiled
 dist/
-coverage/
+tests/coverage/
 
 # development
 node_modules/

@@ -15,6 +15,6 @@ benchmark/
 
 # Config files
 .gitignore
-jest.config.js
+jest.config.ts
 rollup.config.js
 tsconfig.json
