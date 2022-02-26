@@ -1,3 +1,6 @@
+1.0.0:
+- Initial major version.
+
 0.1.0:
 - updated the README.md and documentation for the package.
 
