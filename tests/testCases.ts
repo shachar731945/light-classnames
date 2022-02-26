@@ -1,8 +1,8 @@
-import {ArgumentType} from "../src";
+import {Argument} from "../src";
 
 export type TestCase = {
     name: string,
-    value: ArgumentType[],
+    value: Argument[],
     expectedResult: string
 };
 

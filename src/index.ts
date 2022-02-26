@@ -1,14 +1,14 @@
-export type TruthyArgumentType = string | object | number;
-export type ArgumentType = TruthyArgumentType | null | undefined;
+export type TruthyArgument = string | object | number;
+export type Argument = TruthyArgument | null | undefined;
 
 // Using `arguments` instead normal spread operator (...) due to performance reasons.
 /** Calculates the classNames based on series of arguments */
-const lightClassNames: (...args: ArgumentType[]) => string = function () {
+const lightClassNames: (...args: Argument[]) => string = function () {
     let classNames = '', index = 0, argumentsLength = arguments.length, key;
 
     // Using while instead of for-loop for better performance.
     while (index < argumentsLength) {
-        const arg: ArgumentType = arguments[index];
+        const arg: Argument = arguments[index];
         if (arg) {
             if (typeof arg === 'object') {
                 // Iterating over object with for-in. This is in order to improve performance.
