@@ -8,7 +8,10 @@
   ],
   "keywords": [
     "classnames",
-    "class"
+    "classname",
+    "classes",
+    "clsx",
+    "react"
   ],
   "homepage": "https://github.com/shachar731945/light-classnames#readme",
   "license": "MIT",
