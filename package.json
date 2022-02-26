@@ -1,6 +1,6 @@
 {
   "name": "light-classnames",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A light implementation of the classnames/clsx packages with typescript support",
   "author": "shahar avni",
   "contributors": [
