@@ -3,5 +3,5 @@ export default {
   collectCoverageFrom: ['src/**'],
   coverageDirectory: 'tests/coverage/',
   preset: 'ts-jest',
-  testEnvironment: 'jsdom'
+  testEnvironment: 'node'
 };

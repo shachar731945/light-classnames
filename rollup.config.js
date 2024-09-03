@@ -1,7 +1,7 @@
-import typescript from '@rollup/plugin-typescript';
-import {terser} from 'rollup-plugin-terser';
+const typescript = require("@rollup/plugin-typescript");
+const terser = require("@rollup/plugin-terser")
 
-import pkg from './package.json';
+const pkg = require("./package.json")
 
 const externals = []
     .concat(Object.keys(pkg.dependencies || {}))
@@ -22,4 +22,4 @@ const generateConfig = format => ({
     ]
 });
 
-export default ['esm', 'cjs', 'umd'].map(generateConfig);
+module.exports = ['esm', 'cjs', 'umd'].map(generateConfig);
