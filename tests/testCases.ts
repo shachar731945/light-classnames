@@ -1,4 +1,4 @@
-import {Argument} from "../src";
+import {Argument} from "../src/index";
 
 export type TestCase = {
     name: string,
