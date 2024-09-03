@@ -1,3 +1,8 @@
+1.0.1:
+- Changed MIT License copyright holder adveritising publishing clause
+- Updated packagees to newer version
+- changed jest testing environemtn to node instead of jsdom
+
 1.0.0:
 - Initial major version.
 
